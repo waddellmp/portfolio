@@ -9,34 +9,35 @@ env:
  PROJECT_ID: '${{ secrets.CLOUD_RUN_PROJECT_ID }}'
  REGION: us-central1
  REPO_NAME: portfolio
+
 jobs:
  build:
-  - name: 'Setup, Build, Deploy'
-    runs-on: ubuntu-latest
-    steps:
-     - run: echo $PROJECT_ID
-    #  - name: Checkout
-    #    uses: actions/checkout@v3
+  runs-on: ubuntu-latest
 
-    #  - name: Google Auth
-    #    id: auth
-    #    uses: 'google-github-actions/auth@v0'
-    #    with:
-    #     credentials_json: '${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}'
+  steps:
+   - run: echo "Test"
+  #  - name: Checkout
+  #    uses: actions/checkout@v3
 
-    #  - name: Authorize Docker  push
-    #    run: gcloud auth configure-docker
+  #  - name: Google Auth
+  #    id: auth
+  #    uses: 'google-github-actions/auth@v0'
+  #    with:
+  #     credentials_json: '${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}'
 
-    #  - name: Build and tag the docker image
-    #    run: docker build . --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
+  #  - name: Authorize Docker  push
+  #    run: gcloud auth configure-docker
 
-    #  - name: Push the image to Google Container Registry
-    #    run: docker push gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
+  #  - name: Build and tag the docker image
+  #    run: docker build . --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
 
-    #  - name: Deploy
-    #    run: |-
-    #     gloud run deploy $REPO_NAME \
-    #     --region $REGION \
-    #     --imgae gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
-    #     --platform managed \
-    #     --quiet
+  #  - name: Push the image to Google Container Registry
+  #    run: docker push gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
+
+  #  - name: Deploy
+  #    run: |-
+  #     gloud run deploy $REPO_NAME \
+  #     --region $REGION \
+  #     --imgae gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
+  #     --platform managed \
+  #     --quiet
