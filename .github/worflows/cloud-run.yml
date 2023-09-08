@@ -1,5 +1,6 @@
 name: portfolio
 'on':
+ workflow_dispatch: {}
  push:
   branches:
    - main
