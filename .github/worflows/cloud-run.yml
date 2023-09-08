@@ -1,6 +1,6 @@
 name: portfolio
-'on':
- workflow_dispatch: null
+
+on:
  push:
   branches:
    - main
