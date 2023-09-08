@@ -1,4 +1,4 @@
-name: waddell-portfolio-nextjs
+name: portfolio
 
 on:
  push:
@@ -12,35 +12,30 @@ env:
  REPO_NAME: portfolio
 
 jobs:
- build-and-deploy: Setup, Build, Deploy
- runs-on: ubuntu-latest
- steps:
-  - name: Checkout
-    uses: actions/checkout@v2
-  - id: 'auth'
-    uses: google-github-actions/auth@v0.5.0
-    with:
-     # Set the JSON authentication key using the GCP_SA_KEY secret
-     # created in the GCP project with appropriate Cloud Run permissions.
-     # See
-     credentials_json: '${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}'
+ build-and-deploy:
+  name: Setup, Build, Deploy
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout
+     uses: actions/checkout@v2
+   - id: 'auth'
+     uses: google-github-actions/auth@v0.5.0
+     with:
+      credentials_json: '${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}'
 
-  # Setup gcloud CLI/SDK
-  - name: Authorize Docker  push
-    run: gcloud auth configure-docker
+   - name: Authorize Docker  push
+     run: gcloud auth configure-docker
 
-  - name: Build and tag the docker image
-    run: |
-     docker build . --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
+   - name: Build and tag the docker image
+     run: docker build . --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
 
-  - name: Push the image to Google Container Registry
-    run: |-
-     docker push gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
+   - name: Push the image to Google Container Registry
+     run: docker push gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
 
-  - name: Deploy
-    run: |-
-     gloud run deploy $REPO_NAME \
-     --region $REGION \
-     --imgae gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
-     --platform managed \
-     --quiet
+   - name: Deploy
+     run: |-
+      gloud run deploy $REPO_NAME \
+      --region $REGION \
+      --imgae gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
+      --platform managed \
+      --quiet
