@@ -1,5 +1,3 @@
-name: portfolio
-
 on:
  push:
   branches:
@@ -12,10 +10,12 @@ on:
 
 jobs:
  build:
+  name: Hello world
   runs-on: ubuntu-latest
 
   steps:
-   - run: echo "Test"
+   - uses: actions/checkout@v2
+     run: echo "Test"
   #  - name: Checkout
   #    uses: actions/checkout@v3
 
