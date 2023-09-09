@@ -37,6 +37,6 @@ jobs:
      run: |-
       gcloud run deploy $REPO_NAME \
       --region $REGION \
-      --imgae gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
+      --image gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
       --platform managed \
       --quiet
