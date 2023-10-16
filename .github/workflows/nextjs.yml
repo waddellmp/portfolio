@@ -3,7 +3,6 @@
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
 name: Deploy Portfolio Site to Pages
-
 on:
  # Runs on pushes targeting the default branch
  push:
@@ -27,6 +26,7 @@ concurrency:
 jobs:
  # Build job
  build:
+  environment: 'github-pages'
   env:
    NEXT_PUBLIC_BASE_PATH: /portfolio
   runs-on: ubuntu-latest
