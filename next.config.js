@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
+const basePath = '/portfolio';
 const nextConfig = {
  reactStrictMode: true,
- basePath: '/portfolio',
+ basePath,
  images: {
-  path: '/',
+  path: `${basePath}/_next/image`,
  },
 };
 
