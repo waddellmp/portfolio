@@ -38,9 +38,9 @@ jobs:
   steps:
    - name: Print secrets!!!!!!!!!!!!!!!!!!!!!!!!!!!
      run: |
-      echo $NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      echo $NEXT_PUBLIC_EMAILJS_SERVICE_ID
-      echo $NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      echo ${{ env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}}
+      echo ${{ env.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+      echo ${{ env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
    - name: Checkout
      uses: actions/checkout@v3
    - name: Detect package manager
