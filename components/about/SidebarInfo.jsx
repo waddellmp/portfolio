@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Social from '../social/Social';
 import Info from './Info';
 import { prefix } from '../../prefix';
-
 const SidebarInfo = () => {
  return (
   <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0 ">
