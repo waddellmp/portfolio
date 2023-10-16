@@ -57,9 +57,9 @@ jobs:
       EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
      run: |
       touch env.local
-      echo $EMAILJS_PUBLIC_KEY >> env.local
-      echo $EMAILJS_SERVICE_ID >> env.local
-      echo $EMAILJS_TEMPLATE_ID >> env.local
+      echo env.EMAILJS_PUBLIC_KEY >> env.local
+      echo env.EMAILJS_SERVICE_ID >> env.local
+      echo env.EMAILJS_TEMPLATE_ID >> env.local
       cat env.local
    - name: Setup Node
      uses: actions/setup-node@v3
