@@ -38,7 +38,7 @@ module.exports = {
 
   extend: {
    backgroundImage: {
-    homeBg: "url('/images/background/bg.jpg')",
+    homeBg: `url(${withPrefix('/images/background/bg.jpg')})`,
     'homeBg-dark': `url(${withPrefix('/images/background/bg-dark.jpg')})`,
     'homeTwoBg-dark': `url(${withPrefix('/images/background/bgtwo.jpg')})`,
     previewBg: `url(${withPrefix('/images/preview/previewbg.png')})`,
