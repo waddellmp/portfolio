@@ -4,11 +4,6 @@
 #
 name: Deploy Portfolio Site to Pages
 
-env:
- NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
- NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
- NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
-
 on:
  # Runs on pushes targeting the default branch
  push:
@@ -36,11 +31,6 @@ jobs:
    NEXT_PUBLIC_BASE_PATH: /portfolio
   runs-on: ubuntu-latest
   steps:
-   - name: Print secrets!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     run: |
-      echo ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
-      echo ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  }}
-      echo ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  }}
    - name: Checkout
      uses: actions/checkout@v3
    - name: Detect package manager
@@ -86,7 +76,11 @@ jobs:
    - name: Install dependencies
      run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
    - name: Build with Next.js
-     run: ${{ steps.detect-package-manager.outputs.runner }} next build
+     env:
+      NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+      NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+      NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+     run: ${{ steps.detect-package-manager.outputs.runner }} next build "$env:NEXT_PUBLIC_EMAILJS_PUBLIC_KEY $env:NEXT_PUBLIC_EMAILJS_SERVICE_ID $env:NEXT_PUBLIC_EMAILJS_TEMPLATE_ID"
    - name: Static HTML export with Next.js
      run: ${{ steps.detect-package-manager.outputs.runner }} next export
    - name: Add .nojekyll file
