@@ -10,8 +10,8 @@ const CommonContact = ({ condition }) => {
   e.preventDefault();
   emailjs
    .sendForm(
-    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-    NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
     form.current,
     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
    )
