@@ -3,7 +3,7 @@ const nextConfig = {
  reactStrictMode: true,
  basePath: '/portfolio',
  images: {
-  path: '/portfolio/_next/images',
+  path: '/_next/static',
  },
 };
 
