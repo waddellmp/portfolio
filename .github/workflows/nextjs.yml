@@ -53,13 +53,6 @@ jobs:
         echo "Unable to determine package manager"
         exit 1
       fi
-   - name: Add env.local
-     run: |
-      touch env.local
-      echo ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }} >> env.local
-      echo ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }} >> env.local
-      echo ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }} >> env.local
-      cat env.local
    - name: Setup Node
      uses: actions/setup-node@v3
      with:

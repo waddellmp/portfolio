@@ -19,7 +19,7 @@ const Service = () => {
 
      <div className="space-y-2 break-all">
       <h3 className="dark:text-white text-xl font-semibold">{item?.title}</h3>
-      <p className=" leading-8 text-gray-lite dark:text-[#A6A6A6]">{item?.des}</p>
+      <p className="leading-8 text-gray-lite break-normal dark:text-[#A6A6A6]">{item?.des}</p>
      </div>
     </div>
    ))}

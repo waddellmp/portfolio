@@ -9,25 +9,31 @@ module.exports = [
   items: [
    {
     id: 1,
-    date: '2022-2023',
-    title: 'Lead Frontend Developer',
+    date: '2021-2024',
+    title: 'Lead Frontend Engineer',
     place: 'PayiQ',
     bg: '#FFF4F4',
    },
 
    {
     id: 2,
-    date: '2020 - 2022',
-    title: 'Software Developer',
-    place: 'PayiQ',
+    date: '2019 - 2021',
+    title: 'Frontend Engineer',
+    place: 'Sway Medical',
     bg: '#FFF1FB',
    },
-
    {
     id: 3,
-    date: '2018 - 2020',
-    title: 'Frontend Developer',
-    place: 'Sway Medical',
+    date: '2018 - 2018',
+    title: 'Web Developer',
+    place: 'Fastback Digital',
+    bg: '#FFF4F4',
+   },
+   {
+    id: 3,
+    date: '2016 - 2018',
+    title: 'IT Support',
+    place: 'Ethos Group',
     bg: '#FFF4F4',
    },
   ],
@@ -39,7 +45,7 @@ module.exports = [
   items: [
    {
     id: 1,
-    date: '2017-2021',
+    date: '2010 - 2014',
     title: 'Bachelors of Science',
     place: 'Stephen F Austin State University',
     bg: '#EEF5FA',

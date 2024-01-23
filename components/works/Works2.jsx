@@ -68,25 +68,16 @@ const Works2 = () => {
      All
     </li>
     <li
-     className={`${test === 'Video' ? 'text-[#FA5252]' : 'fillter-btn'} mr-4 md:mx-4`}
-     onClick={() => handleSearch('Video')}
+     className={`${test === 'payiq' ? 'text-[#FA5252]' : 'fillter-btn'} mr-4 md:mx-4`}
+     onClick={() => handleSearch('payiq')}
     >
-     Video
+     PayiQ
     </li>
     <li
-     className={`${test === 'Web Design' ? 'text-[#FA5252]' : 'fillter-btn'} mr-4 md:mx-4`}
-     onClick={() => handleSearch('Web Design')}
+     className={`${test === 'github' ? 'text-[#FA5252]' : 'fillter-btn'} mr-4 md:mx-4`}
+     onClick={() => handleSearch('github')}
     >
-     Web Design
-    </li>
-    <li
-     className={`${test === 'Logo' ? 'text-[#FA5252]' : 'fillter-btn ml-0'} mr-4 md:mx-4`}
-     onClick={() => handleSearch('Logo')}
-    >
-     Logo
-    </li>
-    <li className={`${test === 'UI/UX' ? 'text-[#FA5252]' : 'fillter-btn'}  `} onClick={() => handleSearch('UI/UX')}>
-     Graphic Design
+     Github
     </li>
    </ul>
    {/* End portfolio filter tab */}
@@ -173,11 +164,11 @@ const Works2 = () => {
       <p className="dark:text-white  text-2line font-normal text-[15px] sm:text-sm  ">{singleData?.description}</p>
 
       <Image
-       className="w-full md:h-[450px]  h-auto object-cover rounded-xl mt-6"
+       className="w-full md:h-[300px]  h-auto object-cover rounded-xl mt-6"
        src={withPrefix(singleData?.img)}
        alt="blog details image"
-       width={620}
-       height={420}
+       width={300}
+       height={300}
        loading="lazy"
       />
      </div>

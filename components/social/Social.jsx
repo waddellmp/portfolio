@@ -14,12 +14,12 @@ const Social = () => {
    icon: <FaTwitter />,
    iconClass: 'text-[#1C9CEA]',
   },
-  {
-   id: 3,
-   link: 'https://dribbble.com/',
-   icon: <FaDribbble />,
-   iconClass: 'text-[#e14a84]',
-  },
+  //   {
+  //    id: 3,
+  //    link: 'https://dribbble.com/',
+  //    icon: <FaDribbble />,
+  //    iconClass: 'text-[#e14a84]',
+  //   },
   {
    id: 4,
    link: 'https://www.linkedin.com/in/matthew-waddell-332444102',

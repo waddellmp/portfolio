@@ -32,7 +32,7 @@ const Hero = () => {
     download
     className="flex items-center bg-gradient-to-r from-[#FA5252] to-[#DD2476] duration-200 transition ease-linear hover:bg-gradient-to-l from-[#DD2476]  to-[#fa5252ef] px-8 py-3 text-lg text-white rounded-[35px] mt-6"
    >
-    <Image src={withPrefix('/images/download.png')} alt="icon" className="mr-2" />
+    <Image src={withPrefix('/images/download.png')} alt="icon" className="mr-2" width={16} height={16} />
     Download CV
    </a>
 

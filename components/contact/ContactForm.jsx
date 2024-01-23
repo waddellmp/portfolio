@@ -4,9 +4,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CommonContact = ({ condition }) => {
- console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
- console.log(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
- console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
  const form = useRef();
  // use Email js for recive message
  const sendEmail = (e) => {
@@ -55,9 +52,9 @@ const CommonContact = ({ condition }) => {
    } bg-color-810 rounded-xl dark:bg-[#111111] mb-[30px] md:mb-[60px]`}
   >
    <h3 className="text-4xl  ">
-    <span className="text-gray-lite dark:text-[#A6A6A6] ">I&apos;m always open to discussing product</span>
+    <span className="text-gray-lite dark:text-[#A6A6A6] ">I&apos;m always open to discussing project</span>
     <br />
-    <span className="font-semibold dark:text-white">design work or partnerships.</span>
+    <span className="font-semibold dark:text-white">work or partnerships.</span>
    </h3>
 
    {/* Form Start */}
