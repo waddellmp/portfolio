@@ -11,7 +11,7 @@ const Intro = () => {
        <p className="text-gray-lite  dark:text-color-910 leading-7">
         I am a proud dad of two kids and a software engineer by trade. I enjoy country living in rural East Texas while
         wrangling code during the day. I&apos;m passionate about my feild and have years of experience creating high
-        quality and extensible code. Whether I am using React to build frontend components or testings APIs, I&apos;m
+        quality and extensible code. Whether I am using React to build frontend components or testing APIs, I&apos;m
         commited to listening to the client&apos;s needs and delivering products.
        </p>
        {/* <p className="text-gray-lite leading-7 mt-2.5 dark:text-color-910">I am a</p> */}
